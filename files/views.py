@@ -15,7 +15,7 @@ def uploadFile(request):
     file.save()
     response = {
         "id" : file.id,
-        "imageUrl" : "https://ecwrks.pythonanywhere.com/media/" + os.path.basename(file.file.name),
+        "imageUrl" : "https://ecworks.pythonanywhere.com/media/" + os.path.basename(file.file.name),
         "name" : file.file.name,
         "date" : formatDate(file.date)
     }

@@ -13,7 +13,7 @@ from datetime import datetime
 def getPages(request):
     pages = []
     for page in Page.objects.all():
-        pages.append("https://ecwrks.pythonanywhere.com/media/pages/" + os.path.basename(page.file.name) + "?" + datetime.now().strftime("%d%m%Y%H%M%S"))
+        pages.append("https://ecworks.pythonanywhere.com/media/pages/" + os.path.basename(page.file.name) + "?" + datetime.now().strftime("%d%m%Y%H%M%S"))
     return JsonResponse({"pages" : pages}, safe=False)
 
 
@@ -33,7 +33,7 @@ def setPages(request):
         newPage.save()
     pages = []
     for page in Page.objects.all():
-        pages.append("https://ecwrks.pythonanywhere.com/media/pages/" + os.path.basename(page.file.name) + "?" + datetime.now().strftime("%d%m%Y%H%M%S"))
+        pages.append("https://ecworks.pythonanywhere.com/media/pages/" + os.path.basename(page.file.name) + "?" + datetime.now().strftime("%d%m%Y%H%M%S"))
     return JsonResponse(pages, safe=False)
 
 
